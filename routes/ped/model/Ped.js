@@ -1,13 +1,10 @@
 const mongoose = require("mongoose")
 
 const PedSchema = new mongoose.Schema({
-    firstName:{
+    fullName:{
         type:String
     },
-    lastName:{
-        type:String,
-        
-    },
+
     address:{
         type:String,
     },

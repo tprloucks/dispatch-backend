@@ -14,8 +14,7 @@ async function createPed(req, res){
     
     try {
         let createdPed = new Ped({
-            firstName:req.body.firstName,
-            lastName:req.body.lastName,
+            fullName:req.body.fullName,
             address:req.body.address,
             warrants:req.body.warrants,
             wanted:req.body.wanted,
@@ -30,7 +29,35 @@ async function createPed(req, res){
     }
 }
 
+async function getPedByID(req, res){
+    const id = req.params.id
+    try {
+        let findPedByID = await
+        Ped.findById({_id:id})
+        res.json({message:"success", payload:findPedByID})
+    } catch (e) {
+        res.status(500).json({message:"failure",
+        error:e.message})
+    }
+}
+
+// async function getPedByFirstName(req, res){
+//     const firstName = req.query.lastName
+//     try {
+//         let findPedByName = await
+//         Ped.req.query.firstName
+//         res.json({message:"Success", payload:findPedByName})
+//     } catch (e) {
+//         res.status(500).json({message:"failure",
+//         error:e.message})
+//     }
+// }
+
+
+
 module.exports={
     getAllPed,
-    createPed
+    createPed,
+    getPedByID,
+    // getPedByFirstName
 }
