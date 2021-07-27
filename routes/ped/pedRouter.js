@@ -8,7 +8,7 @@ let{
     createPed,
     getAllPed,
     getPedByID,
-    getPedByFirstName
+    
 }= require("./controller/PedController")
 
 router.get("/get-all-ped", getAllPed)
