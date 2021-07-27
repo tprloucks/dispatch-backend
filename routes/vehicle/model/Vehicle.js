@@ -9,14 +9,15 @@ const vehicleSchema = new mongoose.Schema({
     },
     model:{
         type: String,
-        unique:true
+        
     },
     color:{
         type: String,
-        unique:true
+        
     },
     plate:{
         type: String,
+        unique:true
     },
     insurance:{
         type:Boolean,
