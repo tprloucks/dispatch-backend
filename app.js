@@ -9,6 +9,7 @@ const ErrorMessageHandlerClass = require("./routes/utils/ErrorMessageHandlerClas
 const errorController = require("./routes/utils/errorController");
 const userRouter = require("./routes/user/userRouter");
 const pedRouter = require("./routes/ped/pedRouter")
+const vehicleRouter = require("./routes/vehicle/vehicleRouter")
 app.use(cors());
 
 if (process.env.NODE_ENV === "development") {
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/user", userRouter);
 app.use("/api/ped", pedRouter)
+app.use("/api/vehicle", vehicleRouter)
 
 
 app.all("*", function (req, res, next) {

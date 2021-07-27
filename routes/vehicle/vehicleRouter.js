@@ -1,12 +1,17 @@
-
+const { response } = require("express")
 const express = require("express")
 const Vehicle = require("./model/Vehicle")
 const router = express.Router()
 
+let{
+    createVehicle,
+    getAllVehicle
+}= require("./controller/vehicleController")
 
-
+router.post("/create-vehicle", createVehicle)
+router.get("/get-all-vehicle", getAllVehicle)
 router.get("/get-by-plate", (req, res)=>{
-    Ped.find(req.query)
+    Vehicle.find(req.query)
         .then(
             result=>{
                 res.json(result)
