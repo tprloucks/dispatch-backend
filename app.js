@@ -10,6 +10,7 @@ const errorController = require("./routes/utils/errorController");
 const userRouter = require("./routes/user/userRouter");
 const pedRouter = require("./routes/ped/pedRouter")
 const vehicleRouter = require("./routes/vehicle/vehicleRouter")
+const officerRouter = require("./routes/officer/officerRouter")
 app.use(cors());
 
 if (process.env.NODE_ENV === "development") {
@@ -27,6 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/user", userRouter);
 app.use("/api/ped", pedRouter)
 app.use("/api/vehicle", vehicleRouter)
+app.use("/api/officer",officerRouter )
 
 
 app.all("*", function (req, res, next) {

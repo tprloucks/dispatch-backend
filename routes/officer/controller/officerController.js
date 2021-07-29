@@ -1,4 +1,4 @@
-const Ped = require("../model/Officer")
+const Officer = require("../model/Officer")
 
 async function getAllOfficer(req, res){
     try {
@@ -13,11 +13,10 @@ async function createOfficer(req, res){
     
     try {
         let createdOfficer = new Officer({
-            lastName:req.body.lastName,
-            badge:req.body.badge,
-            status:req.body.status,
-            wanted:req.body.wanted,
-            beat:req.body.beat,
+            lastName:req.body.lastNameInput,
+            badge:req.body.badgeInput,
+            status:req.body.statusInput,
+            beat:req.body.beatInput,
             
             
         })
@@ -26,4 +25,9 @@ async function createOfficer(req, res){
     }catch (e){
         res.status(500).json({message: "failure", error:e.message})
     }
+}
+
+module.exports={
+    getAllOfficer,
+    createOfficer
 }

@@ -1,6 +1,6 @@
 const { response } = require("express")
 const express = require("express")
-const Officer = require("./model/Officer")
+
 const router = express.Router()
 
 let{
@@ -10,6 +10,6 @@ let{
 }=require("./controller/OfficerController")
 
 router.get("/get-all-officer", getAllOfficer)
-router.post("/creat-officer", createOfficer)
+router.post("/create-officer", createOfficer)
 
 module.exports=router
